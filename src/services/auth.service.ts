@@ -14,6 +14,9 @@ export interface SessionUser {
   name: string;
   phone: string;
   accountType: string;
+  company: string;
+  ruc: string;
+  city: string;
 }
 
 function sanitize(user: any): SessionUser {
@@ -23,6 +26,9 @@ function sanitize(user: any): SessionUser {
     name: user.name,
     phone: user.phone,
     accountType: user.accountType,
+    company: user.company ?? "",
+    ruc: user.ruc ?? "",
+    city: user.city ?? "",
   };
 }
 
@@ -107,7 +113,7 @@ export async function createUser(input: {
     password: input.password,
     name: input.name || "",
     phone: input.phone || "",
-    accountType: input.accountType || "customer",
+    accountType: input.accountType || "distributor",
   });
   return sanitize(user);
 }
