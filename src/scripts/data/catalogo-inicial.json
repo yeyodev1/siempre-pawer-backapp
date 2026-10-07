@@ -1,0 +1,603 @@
+{
+  "categories": [
+    {
+      "name": "Balones de fútbol",
+      "slug": "futbol",
+      "description": "Balones de fútbol termosellados Pawer para césped natural, sintético y canchas exigentes.",
+      "order": 1
+    },
+    {
+      "name": "Balones de futsal",
+      "slug": "futsal",
+      "description": "Balones de futsal N°4 de semibote para un juego más controlado.",
+      "order": 2
+    },
+    {
+      "name": "Indoor",
+      "slug": "indoor",
+      "description": "Balones para indoor y superficies exigentes.",
+      "order": 3
+    },
+    {
+      "name": "Vóley",
+      "slug": "voley",
+      "description": "Balones de vóley sala Mikasa.",
+      "order": 4
+    },
+    {
+      "name": "Escolar",
+      "slug": "escolar",
+      "description": "Combos escolares de mochila, lonchera y cartuchera.",
+      "order": 5
+    }
+  ],
+  "products": [
+    {
+      "name": "Balón Pawer N°5",
+      "slug": "balon-pawer-n5",
+      "sku": "PAW-N5",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol N°5 termosellado con tecnología aerodinámica.",
+      "description": "Balón de fútbol N°5 termosellado PAWER. Tecnología aerodinámica para juego y entrenamiento.",
+      "features": [
+        "Termosellado",
+        "Peso y bote reglamentarios",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°5"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Peso y bote",
+          "value": "Reglamentarios"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409481/siempre-pawer/productos/balon-pawer-n5-1.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": true,
+      "order": 1
+    },
+    {
+      "name": "Balón Pawer T90 N°5",
+      "slug": "balon-pawer-t90-n5",
+      "sku": "PAW-T90-N5",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol N°5 termosellado con textura de alto agarre.",
+      "description": "Balón de fútbol N°5 termosellado. Ideal para césped natural y sintético.",
+      "features": [
+        "Termosellado",
+        "Textura de alto agarre",
+        "Peso y bote reglamentarios",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°5"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Peso y bote",
+          "value": "Reglamentarios"
+        },
+        {
+          "label": "Superficie",
+          "value": "Césped natural y sintético"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409483/siempre-pawer/productos/balon-pawer-t90-n5-1.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409484/siempre-pawer/productos/balon-pawer-t90-n5-2.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": true,
+      "order": 2
+    },
+    {
+      "name": "Balón Pawer Liga Pro N°5",
+      "slug": "balon-pawer-liga-pro-n5",
+      "sku": "PAW-LIGAPRO-N5",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol N°5 termosellado para césped natural y sintético.",
+      "description": "Balón de fútbol N°5 termosellado. Ideal para césped natural y sintético.",
+      "features": [
+        "Termosellado",
+        "Peso y bote reglamentarios",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°5"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Peso y bote",
+          "value": "Reglamentarios"
+        },
+        {
+          "label": "Superficie",
+          "value": "Césped natural y sintético"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409480/siempre-pawer/productos/balon-pawer-liga-pro-n5-1.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": true,
+      "order": 3
+    },
+    {
+      "name": "Balón Pawer TT5 N°5",
+      "slug": "balon-pawer-tt5-n5",
+      "sku": "PAW-TT5-N5",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol N°5 termosellado para canchas exigentes.",
+      "description": "Balón de fútbol N°5 termosellado, resistente y duradero, ideal para canchas exigentes. Peso aproximado de 440 g.",
+      "features": [
+        "Fútbol N°5",
+        "Termosellado",
+        "Resistente y duradero",
+        "Ideal para canchas exigentes",
+        "Peso aprox. 440 g"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°5"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Peso",
+          "value": "Aprox. 440 g"
+        },
+        {
+          "label": "Superficie",
+          "value": "Canchas exigentes"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409486/siempre-pawer/productos/balon-pawer-tt5-n5-1.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 4
+    },
+    {
+      "name": "Balón Pawer 5000 N°5",
+      "slug": "balon-pawer-5000-n5",
+      "sku": "PAW-5000-N5",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol N°5 termosellado para césped natural y sintético.",
+      "description": "Balón de fútbol N°5 termosellado. Ideal para césped natural y sintético.",
+      "features": [
+        "Termosellado",
+        "Peso y bote reglamentarios",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°5"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Peso y bote",
+          "value": "Reglamentarios"
+        },
+        {
+          "label": "Superficie",
+          "value": "Césped natural y sintético"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409478/siempre-pawer/productos/balon-pawer-5000-n5-1.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 5
+    },
+    {
+      "name": "Balón Pawer Niños N°4 (8 a 12 años)",
+      "slug": "balon-pawer-ninos-n4",
+      "sku": "PAW-NINOS-N4",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol N°4 de bote completo para niños de 8 a 12 años.",
+      "description": "Balón de fútbol de bote completo, ideal para niños de 8 a 12 años, academias y escuelas de fútbol.",
+      "features": [
+        "Tamaño N°4",
+        "Bote completo",
+        "Termosellado",
+        "Peso adecuado para su categoría",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°4"
+        },
+        {
+          "label": "Bote",
+          "value": "Completo"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Edad recomendada",
+          "value": "8 a 12 años"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409482/siempre-pawer/productos/balon-pawer-ninos-n4-1.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 6
+    },
+    {
+      "name": "Balón Futsal Pawer N°4",
+      "slug": "balon-futsal-pawer-n4",
+      "sku": "PAW-FS-N4",
+      "categorySlug": "futsal",
+      "shortDescription": "Balón de futsal N°4 termosellado de semibote.",
+      "description": "Balón de futsal N°4 termosellado, diseñado para un juego más controlado. Ideal para césped sintético, parquet y cemento liso.",
+      "features": [
+        "Semibote",
+        "Termosellado",
+        "Buen control",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°4"
+        },
+        {
+          "label": "Bote",
+          "value": "Semibote"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Superficie",
+          "value": "Césped sintético, parquet, cemento liso"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409472/siempre-pawer/productos/balon-futsal-pawer-n4-1.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409472/siempre-pawer/productos/balon-futsal-pawer-n4-2.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 7
+    },
+    {
+      "name": "Balón Futsal Pawer T90 N°4",
+      "slug": "balon-futsal-pawer-t90",
+      "sku": "PAW-FS-T90",
+      "categorySlug": "futsal",
+      "shortDescription": "Balón de futsal N°4 termosellado de semibote.",
+      "description": "Balón de futsal N°4 termosellado, diseñado para un juego más controlado. Ideal para césped sintético.",
+      "features": [
+        "Semibote",
+        "Termosellado",
+        "Buen control",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°4"
+        },
+        {
+          "label": "Bote",
+          "value": "Semibote"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Superficie",
+          "value": "Césped sintético"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409473/siempre-pawer/productos/balon-futsal-pawer-t90-1.jpg"
+      ],
+      "prices": {
+        "card": 2500,
+        "transfer": 2500,
+        "cod": 2500
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 8
+    },
+    {
+      "name": "Balón Pawer Indoor N°3 Todo Terreno",
+      "slug": "balon-pawer-indoor-n3",
+      "sku": "PAW-IND-N3",
+      "categorySlug": "indoor",
+      "shortDescription": "Balón indoor N°3 termosellado de bote seco para todo terreno.",
+      "description": "Balón diseñado para Indoor, entrenamientos y partidos en superficies exigentes.",
+      "features": [
+        "Termosellado",
+        "Bote seco / bote bajo",
+        "Todo terreno",
+        "Tamaño N°3",
+        "Resistente y duradero"
+      ],
+      "specs": [
+        {
+          "label": "Tamaño",
+          "value": "N°3"
+        },
+        {
+          "label": "Bote",
+          "value": "Seco / bajo"
+        },
+        {
+          "label": "Construcción",
+          "value": "Termosellado"
+        },
+        {
+          "label": "Superficie",
+          "value": "Todo terreno"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409479/siempre-pawer/productos/balon-pawer-indoor-n3-1.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409480/siempre-pawer/productos/balon-pawer-indoor-n3-2.jpg"
+      ],
+      "prices": {
+        "card": 2000,
+        "transfer": 2000,
+        "cod": 2000
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 9
+    },
+    {
+      "name": "Balón Mikasa V200W Vóley Sala",
+      "slug": "balon-mikasa-v200w",
+      "sku": "MIK-V200W",
+      "categorySlug": "voley",
+      "shortDescription": "Balón de vóley sala Mikasa de nivel profesional.",
+      "description": "Balón de vóley sala Mikasa V200W de nivel profesional, con toque suave y acolchonado para un mayor control y precisión.",
+      "features": [
+        "Nivel profesional",
+        "Toque suave y acolchonado",
+        "Control y precisión"
+      ],
+      "specs": [
+        {
+          "label": "Marca",
+          "value": "Mikasa"
+        },
+        {
+          "label": "Modelo",
+          "value": "V200W"
+        },
+        {
+          "label": "Uso",
+          "value": "Vóley sala"
+        },
+        {
+          "label": "Nivel",
+          "value": "Profesional"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409473/siempre-pawer/productos/balon-mikasa-v200w-1.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409474/siempre-pawer/productos/balon-mikasa-v200w-2.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409475/siempre-pawer/productos/balon-mikasa-v200w-3.jpg"
+      ],
+      "prices": {
+        "card": 8999,
+        "transfer": 8999,
+        "cod": 8999
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": true,
+      "order": 10
+    },
+    {
+      "name": "Balón Mikasa V330W Vóley Sala",
+      "slug": "balon-mikasa-v330w",
+      "sku": "MIK-V330W",
+      "categorySlug": "voley",
+      "shortDescription": "Balón de vóley sala Mikasa para entrenamiento y juego.",
+      "description": "Balón de vóley sala Mikasa V330W para entrenamiento y juego, con buen tacto y control. Resistente para uso frecuente.",
+      "features": [
+        "Entrenamiento y juego",
+        "Buen tacto y control",
+        "Resistente para uso frecuente"
+      ],
+      "specs": [
+        {
+          "label": "Marca",
+          "value": "Mikasa"
+        },
+        {
+          "label": "Modelo",
+          "value": "V330W"
+        },
+        {
+          "label": "Uso",
+          "value": "Vóley sala"
+        },
+        {
+          "label": "Nivel",
+          "value": "Entrenamiento y juego"
+        }
+      ],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409475/siempre-pawer/productos/balon-mikasa-v330w-1.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409476/siempre-pawer/productos/balon-mikasa-v330w-2.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409477/siempre-pawer/productos/balon-mikasa-v330w-3.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409478/siempre-pawer/productos/balon-mikasa-v330w-4.jpg"
+      ],
+      "prices": {
+        "card": 4999,
+        "transfer": 4999,
+        "cod": 4999
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": true,
+      "order": 11
+    },
+    {
+      "name": "Combo en Ruedas: Mochila, Lonchera y Cartuchera",
+      "slug": "combo-ruedas-mochila-lonchera-cartuchera",
+      "sku": "ESC-COMBO-RUEDAS",
+      "categorySlug": "escolar",
+      "shortDescription": "Combo de mochila con ruedas, lonchera y cartuchera.",
+      "description": "Combo de mochila con ruedas, lonchera y cartuchera. Solicita el diseño que más te guste.",
+      "features": [],
+      "specs": [],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409487/siempre-pawer/productos/combo-ruedas-mochila-lonchera-cartuchera-1.jpg"
+      ],
+      "prices": {
+        "card": 5789,
+        "transfer": 5789,
+        "cod": 5789
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 12
+    },
+    {
+      "name": "Combo Escolar: Mochila, Lonchera y Cartuchera",
+      "slug": "combo-escolar-mochila-lonchera-cartuchera",
+      "sku": "ESC-COMBO-ESCOLAR",
+      "categorySlug": "escolar",
+      "shortDescription": "Combo escolar de mochila, lonchera y cartuchera.",
+      "description": "Combo escolar de mochila, lonchera y cartuchera.",
+      "features": [],
+      "specs": [],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409486/siempre-pawer/productos/combo-escolar-mochila-lonchera-cartuchera-1.jpg"
+      ],
+      "prices": {
+        "card": 4600,
+        "transfer": 4600,
+        "cod": 4600
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": true,
+      "isFeatured": false,
+      "order": 13
+    },
+    {
+      "name": "Balón Pawer TT4",
+      "slug": "balon-pawer-tt4",
+      "sku": "PAW-TT4",
+      "categorySlug": "futbol",
+      "shortDescription": "Balón de fútbol Pawer modelo TT4.",
+      "description": "Balón de fútbol Pawer modelo TT4.",
+      "features": [],
+      "specs": [],
+      "images": [
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409484/siempre-pawer/productos/balon-pawer-tt4-1.jpg",
+        "https://res.cloudinary.com/vtdgtmbu/image/upload/v1791409485/siempre-pawer/productos/balon-pawer-tt4-2.jpg"
+      ],
+      "prices": {
+        "card": 0,
+        "transfer": 0,
+        "cod": 0
+      },
+      "volumeTiers": [],
+      "stock": 20,
+      "isPublished": false,
+      "isFeatured": false,
+      "order": 14
+    }
+  ]
+}
