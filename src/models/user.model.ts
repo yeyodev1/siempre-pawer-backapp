@@ -1,7 +1,8 @@
 import bcrypt from "bcryptjs";
 import mongoose, { Schema } from "mongoose";
 
-export const ACCOUNT_TYPES = ["customer", "admin"] as const;
+// Sin cuentas de cliente: se compra como invitado. Solo admin y distribuidores inician sesión.
+export const ACCOUNT_TYPES = ["admin", "distributor"] as const;
 export type AccountType = (typeof ACCOUNT_TYPES)[number];
 
 export interface IUser {
@@ -10,6 +11,9 @@ export interface IUser {
   name: string;
   phone: string;
   accountType: AccountType;
+  company: string;
+  ruc: string;
+  city: string;
   isActive: boolean;
   lastLoginAt: Date | null;
   resetPasswordToken: string | null;
@@ -25,7 +29,10 @@ const userSchema = new Schema<IUser>(
     password: { type: String, required: true, select: false },
     name: { type: String, default: "" },
     phone: { type: String, default: "" },
-    accountType: { type: String, enum: ACCOUNT_TYPES, default: "customer" },
+    accountType: { type: String, enum: ACCOUNT_TYPES, default: "distributor" },
+    company: { type: String, default: "" },
+    ruc: { type: String, default: "" },
+    city: { type: String, default: "" },
     isActive: { type: Boolean, default: true },
     lastLoginAt: { type: Date, default: null },
     resetPasswordToken: { type: String, default: null },
