@@ -43,7 +43,7 @@ function summary(order: any): string {
   const rows = order.items
     .map(
       (i: any) => `<tr>
-        <td style="padding:8px 0;border-bottom:1px solid #eee">${e(i.name)} x ${i.qty}</td>
+        <td style="padding:8px 0;border-bottom:1px solid #eee">${e(i.name)}${i.variant ? ` (${e(i.variant)})` : ""} x ${i.qty}</td>
         <td style="padding:8px 0;border-bottom:1px solid #eee;text-align:right">${money(i.lineTotal)}</td>
       </tr>`,
     )

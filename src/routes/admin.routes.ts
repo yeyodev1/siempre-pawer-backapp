@@ -9,6 +9,7 @@ import * as orderController from "../controllers/order.controller";
 import * as couponController from "../controllers/coupon.controller";
 import * as distributorController from "../controllers/distributor.controller";
 import * as settingsController from "../controllers/settings.controller";
+import * as schoolQuoteController from "../controllers/schoolQuote.controller";
 
 const router = Router();
 
@@ -41,6 +42,9 @@ router.get("/distributors", distributorController.list);
 router.post("/distributors", distributorController.create);
 router.put("/distributors/:id", distributorController.update);
 router.delete("/distributors/:id", distributorController.remove);
+
+router.get("/school-quotes", schoolQuoteController.list);
+router.patch("/school-quotes/:id", schoolQuoteController.setStatus);
 
 router.get("/settings", settingsController.getAdmin);
 router.put("/settings", settingsController.update);

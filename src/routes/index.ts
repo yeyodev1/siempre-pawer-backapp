@@ -7,6 +7,8 @@ import productRoutes from "./product.routes";
 import couponRoutes from "./coupon.routes";
 import orderRoutes from "./order.routes";
 import adminRoutes from "./admin.routes";
+import { uploadMiddleware } from "../middlewares/upload.middleware";
+import * as schoolQuoteController from "../controllers/schoolQuote.controller";
 
 function routerApi(app: Application) {
   const router = express.Router();
@@ -19,6 +21,7 @@ function routerApi(app: Application) {
   router.use("/products", productRoutes);
   router.use("/coupons", couponRoutes);
   router.use("/orders", orderRoutes);
+  router.post("/school-quotes", uploadMiddleware.single("file"), schoolQuoteController.create);
   router.use("/admin", adminRoutes);
 }
 

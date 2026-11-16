@@ -6,6 +6,10 @@ export interface IProduct {
   slug: string;
   sku: string;
   category: Types.ObjectId | null;
+  // Pestaña dentro de la categoría (ej. "Medias antideslizantes").
+  subcategory: string;
+  // Tallas con sus colores; size vacío = solo colores, colors vacío = solo talla.
+  variants: { size: string; colors: string[] }[];
   shortDescription: string;
   description: string;
   features: string[];
@@ -30,6 +34,11 @@ const productSchema = new Schema<IProduct>(
     slug: { type: String, required: true, unique: true, lowercase: true, trim: true },
     sku: { type: String, default: "", trim: true },
     category: { type: Schema.Types.ObjectId, ref: "Category", default: null, index: true },
+    subcategory: { type: String, default: "", trim: true },
+    variants: {
+      type: [{ size: { type: String, default: "" }, colors: { type: [String], default: [] }, _id: false }],
+      default: [],
+    },
     shortDescription: { type: String, default: "" },
     description: { type: String, default: "" },
     features: { type: [String], default: [] },

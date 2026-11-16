@@ -47,6 +47,7 @@ export interface IOrder {
     name: string;
     slug: string;
     image: string;
+    variant: string;
     qty: number;
     unitPrice: number;
     lineTotal: number;
@@ -109,6 +110,7 @@ const orderSchema = new Schema<IOrder>(
         name: { type: String, required: true },
         slug: { type: String, default: "" },
         image: { type: String, default: "" },
+        variant: { type: String, default: "" },
         qty: { type: Number, required: true, min: 1 },
         unitPrice: { type: Number, required: true },
         lineTotal: { type: Number, required: true },

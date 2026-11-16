@@ -27,11 +27,15 @@ const DEFAULT_FOLDER = "siempre-pawer-backapp";
 export function uploadBuffer(
   buffer: Buffer,
   folder = DEFAULT_FOLDER,
+  // "auto" acepta Excel/Word (raw); las transformaciones solo aplican a imágenes.
+  resourceType: "image" | "auto" = "image",
 ): Promise<{ url: string; publicId: string }> {
   ensureConfig();
   return new Promise((resolve, reject) => {
     const stream = cloudinary.uploader.upload_stream(
-      { folder, resource_type: "image", transformation: [{ quality: "auto", fetch_format: "auto" }] },
+      resourceType === "image"
+        ? { folder, resource_type: "image", transformation: [{ quality: "auto", fetch_format: "auto" }] }
+        : { folder, resource_type: "auto" },
       (error, result?: UploadApiResponse) => {
         if (error || !result) return reject(error || new Error("Cloudinary sin respuesta"));
         resolve({ url: result.secure_url, publicId: result.public_id });

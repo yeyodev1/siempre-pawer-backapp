@@ -5,7 +5,7 @@ import { Product } from "../models/product.model";
 import { slugify } from "../utils/slugify";
 import { escapeRegex, paginated, parsePagination, text, toCents } from "../utils/query";
 
-const CATEGORY_FIELDS = "name slug";
+const CATEGORY_FIELDS = "name slug subcategories";
 
 /** El precio de distribuidor solo viaja a distribuidores con sesión. */
 export function serialize(product: any, isDistributor: boolean) {
@@ -33,10 +33,12 @@ export async function listPublic(query: any, isDistributor: boolean) {
     if (!category) return paginated([], 0, page, limit);
     filter.category = category._id;
   }
+  const subcategory = text(query?.sub);
+  if (subcategory) filter.subcategory = new RegExp(`^${escapeRegex(subcategory)}$`, "i");
   const search = text(query?.search);
   if (search) {
     const rx = new RegExp(escapeRegex(search), "i");
-    filter.$or = [{ name: rx }, { sku: rx }, { shortDescription: rx }];
+    filter.$or = [{ name: rx }, { sku: rx }, { shortDescription: rx }, { subcategory: rx }];
   }
   if (text(query?.featured) === "true") filter.isFeatured = true;
 
@@ -71,7 +73,7 @@ export async function getBySlug(slug: string, isDistributor: boolean) {
         _id: { $ne: product._id },
       })
         .sort({ order: 1, createdAt: -1 })
-        .limit(4)
+        .limit(6)
         .populate("category", CATEGORY_FIELDS)
         .lean()
     : [];
@@ -165,7 +167,15 @@ async function parseInput(body: any, partial: boolean) {
     }
     data.prices = prices;
   }
-  for (const key of ["sku", "shortDescription", "description"]) {
+  if (body?.variants !== undefined) {
+    data.variants = (Array.isArray(body.variants) ? body.variants : [])
+      .map((v: any) => ({
+        size: text(v?.size),
+        colors: (Array.isArray(v?.colors) ? v.colors : []).map(text).filter(Boolean),
+      }))
+      .filter((v: any) => v.size || v.colors.length);
+  }
+  for (const key of ["sku", "subcategory", "shortDescription", "description"]) {
     if (body?.[key] !== undefined) data[key] = text(body[key]);
   }
   if (body?.features !== undefined) {

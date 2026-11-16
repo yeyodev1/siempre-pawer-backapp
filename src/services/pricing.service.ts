@@ -23,6 +23,7 @@ export interface QuoteItem {
   productId: string;
   name: string;
   image: string;
+  variant: string;
   qty: number;
   unitPrice: number;
   lineTotal: number;
@@ -73,25 +74,42 @@ export function unitPriceFor(
   return tier.unitPrice + (methodPrice - product.prices.card);
 }
 
-function parseItems(raw: unknown): { productId: string; qty: number }[] {
+interface WantedLine {
+  productId: string;
+  variant: string;
+  qty: number;
+}
+
+export function variantLabel(size: string, color: string): string {
+  return [size, color].filter(Boolean).join(" · ");
+}
+
+/** Combinaciones válidas de un producto; vacío = el producto no tiene variantes. */
+export function variantOptions(product: any): string[] {
+  return (product.variants ?? []).flatMap((v: any) =>
+    v.colors?.length ? v.colors.map((c: string) => variantLabel(v.size, c)) : [variantLabel(v.size, "")],
+  );
+}
+
+function parseItems(raw: unknown): WantedLine[] {
   if (!Array.isArray(raw) || raw.length === 0) {
     throw new CustomError("Tu carrito está vacío", 400);
   }
-  // Se agrupan por producto para validar stock y tiers sobre la cantidad total.
-  const merged = new Map<string, number>();
+  // Una línea por producto + variante; stock y tiers se validan sobre el total del producto.
+  const merged = new Map<string, WantedLine>();
   for (const item of raw) {
     const productId = String((item as any)?.productId ?? "");
+    const variant = String((item as any)?.variant ?? "").trim();
     const qty = Math.floor(Number((item as any)?.qty));
     if (!isValidObjectId(productId))
       throw new CustomError("Hay un producto inválido en el carrito", 400);
     if (!Number.isFinite(qty) || qty < 1)
       throw new CustomError("La cantidad debe ser al menos 1", 400);
-    merged.set(productId, (merged.get(productId) ?? 0) + qty);
+    const key = `${productId}|${variant}`;
+    const prev = merged.get(key);
+    merged.set(key, { productId, variant, qty: (prev?.qty ?? 0) + qty });
   }
-  return [...merged].map(([productId, qty]) => {
-    if (qty > MAX_QTY) throw new CustomError(`La cantidad máxima por producto es ${MAX_QTY}`, 400);
-    return { productId, qty };
-  });
+  return [...merged.values()];
 }
 
 export async function priceCart(input: PricingInput): Promise<PricingResult> {
@@ -126,12 +144,17 @@ export async function priceCart(input: PricingInput): Promise<PricingResult> {
     isPublished: true,
   }).lean<any[]>();
   const byId = new Map(products.map((p) => [String(p._id), p]));
+  const qtyByProduct = new Map<string, number>();
+  for (const w of wanted) qtyByProduct.set(w.productId, (qtyByProduct.get(w.productId) ?? 0) + w.qty);
 
-  const lines: PricedLine[] = wanted.map(({ productId, qty }) => {
+  const lines: PricedLine[] = wanted.map(({ productId, variant, qty }) => {
     const product = byId.get(productId);
     if (!product)
       throw new CustomError("Uno de los productos de tu carrito ya no está disponible", 404);
-    if (qty > product.stock) {
+    const totalQty = qtyByProduct.get(productId)!;
+    if (totalQty > MAX_QTY)
+      throw new CustomError(`La cantidad máxima por producto es ${MAX_QTY}`, 400);
+    if (totalQty > product.stock) {
       throw new CustomError(
         product.stock > 0
           ? `Solo quedan ${product.stock} unidad(es) de "${product.name}"`
@@ -139,12 +162,17 @@ export async function priceCart(input: PricingInput): Promise<PricingResult> {
         409,
       );
     }
-    const unitPrice = unitPriceFor(product, paymentMethod, qty, isDistributor);
+    const options = variantOptions(product);
+    if (options.length && !options.includes(variant)) {
+      throw new CustomError(`Escoge talla y color de "${product.name}"`, 400);
+    }
+    const unitPrice = unitPriceFor(product, paymentMethod, totalQty, isDistributor);
     return {
       productId,
       name: product.name,
       slug: product.slug,
       image: product.images?.[0] ?? "",
+      variant: options.length ? variant : "",
       qty,
       unitPrice,
       lineTotal: unitPrice * qty,

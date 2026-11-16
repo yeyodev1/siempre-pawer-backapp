@@ -5,6 +5,7 @@ export interface ICategory {
   slug: string;
   description: string;
   image: string;
+  subcategories: string[];
   order: number;
   isActive: boolean;
   createdAt?: Date;
@@ -17,6 +18,7 @@ const categorySchema = new Schema<ICategory>(
     slug: { type: String, required: true, unique: true, lowercase: true, trim: true },
     description: { type: String, default: "" },
     image: { type: String, default: "" },
+    subcategories: { type: [String], default: [] },
     order: { type: Number, default: 0 },
     isActive: { type: Boolean, default: true },
   },

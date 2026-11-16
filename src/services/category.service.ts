@@ -27,6 +27,11 @@ function parseInput(body: any, partial: boolean) {
   }
   if (body?.description !== undefined) data.description = text(body.description);
   if (body?.image !== undefined) data.image = text(body.image);
+  if (body?.subcategories !== undefined) {
+    data.subcategories = (Array.isArray(body.subcategories) ? body.subcategories : [])
+      .map(text)
+      .filter(Boolean);
+  }
   if (body?.order !== undefined) data.order = Number(body.order) || 0;
   if (body?.isActive !== undefined) data.isActive = Boolean(body.isActive);
   return data;

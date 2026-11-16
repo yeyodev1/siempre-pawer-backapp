@@ -233,6 +233,7 @@ export async function createOrder(body: any, user?: JwtPayload) {
               name: l.name,
               slug: l.slug,
               image: l.image,
+              variant: l.variant,
               qty: l.qty,
               unitPrice: l.unitPrice,
               lineTotal: l.lineTotal,
