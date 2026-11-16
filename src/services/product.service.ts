@@ -78,6 +78,19 @@ export async function getBySlug(slug: string, isDistributor: boolean) {
         .lean()
     : [];
 
+  // "Completa tu juego": si la categoría tiene pocos productos, se rellena con destacados.
+  if (related.length < 4) {
+    const extra = await Product.find({
+      isPublished: true,
+      _id: { $nin: [product._id, ...related.map((p: any) => p._id)] },
+    })
+      .sort({ isFeatured: -1, order: 1, createdAt: -1 })
+      .limit(4 - related.length)
+      .populate("category", CATEGORY_FIELDS)
+      .lean();
+    related.push(...extra);
+  }
+
   return {
     ...serialize(product, isDistributor),
     related: related.map((p: any) => serialize(p, isDistributor)),
