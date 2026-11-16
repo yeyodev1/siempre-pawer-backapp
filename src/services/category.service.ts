@@ -5,8 +5,30 @@ import { Product } from "../models/product.model";
 import { slugify } from "../utils/slugify";
 import { text } from "../utils/query";
 
+/**
+ * Solo categorías con productos publicados, y de sus subcategorías solo las
+ * que tienen productos (en el orden del mapa; las sueltas van al final).
+ */
 export async function listPublic() {
-  return Category.find({ isActive: true }).sort({ order: 1, name: 1 }).lean();
+  const [categories, groups] = await Promise.all([
+    Category.find({ isActive: true }).sort({ order: 1, name: 1 }).lean<any[]>(),
+    Product.aggregate<{ _id: { category: unknown; sub: string }; count: number }>([
+      { $match: { isPublished: true, category: { $ne: null } } },
+      { $group: { _id: { category: "$category", sub: "$subcategory" }, count: { $sum: 1 } } },
+    ]),
+  ]);
+  return categories
+    .map((c) => {
+      const mine = groups.filter((g) => String(g._id.category) === String(c._id));
+      const used = new Set(mine.map((g) => g._id.sub).filter(Boolean));
+      const ordered = (c.subcategories ?? []).filter((s: string) => used.has(s));
+      return {
+        ...c,
+        subcategories: [...ordered, ...[...used].filter((s) => !ordered.includes(s))],
+        productCount: mine.reduce((sum, g) => sum + g.count, 0),
+      };
+    })
+    .filter((c) => c.productCount > 0);
 }
 
 export async function listAdmin() {
